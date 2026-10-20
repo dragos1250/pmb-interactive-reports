@@ -1,0 +1,296 @@
+/* Formular Sesizare */
+
+
+/* Container formular – fundal blurat, centrat, animat */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    margin-top: 100px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Animație apariție formular – urcă și apare */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Titlu formular – mare, centrat, colorat */
+h1 {
+    font-size: 28px;
+    color: #1e2368;
+    text-align: center;
+}
+
+/* Paragraf introductiv – stil text aliniat */
+p {
+    text-align: left;
+    margin-bottom: 30px;
+    color: #1e2368;
+}
+
+/* Grup inputuri – stivuire verticală, spacing */
+.sesizare-form .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etichete input – font bold, spacing jos */
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #1e2368;
+}
+
+/* Câmpuri text & textarea – stil comun, rotunjit */
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 40px;
+}
+
+/* Înălțime minimă pentru textarea */
+textarea {
+    min-height: 80px;
+}
+
+/* Contor caractere – aliniat dreapta, mic */
+#charCount {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #1e2368;
+}
+
+/* Grupare form – ajustare spacing vertical */
+.form-group {
+    margin-top: -5px;
+}
+
+/* Casetă încărcare imagine – zonă drag&drop */
+.image-upload-box {
+    margin-top: 10px;
+    width: 100%;
+    height: 180px;
+    border: 3px dashed rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* Hover casetă imagine – evidențiere ușoară */
+.image-upload-box:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Text din zona upload – stil clar */
+.image-upload-box p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Imagine previzualizare – scalabilă, contur gri */
+#previewImage {
+    margin-top: 10px;
+    max-width: 100%;
+    object-fit: contain;
+    border: 2px dashed #ccc;
+    padding: 5px;
+}
+
+/* Buton trimitere – stil plat, modern */
+button {
+    background-color: #ffffff;
+    color: #266E99;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover buton – schimbă culoarea fundalului */
+button:hover {
+    background-color: #e0e0e0;
+}
+
+/* DARK MODE – fundal și text întunecat */
+.dark .container {
+    background-color: rgba(26, 32, 44, 0.8);
+    color: #f0f0f0;
+}
+
+/* Texturi dark – culori luminoase */
+.dark h1,
+.dark h2,
+.dark p,
+.dark label {
+    color: #f0f0f0;
+}
+
+/* Câmpuri dark – fundal închis, text alb */
+.dark input[type="text"],
+.dark input[type="tel"],
+.dark select,
+.dark textarea {
+    background-color: #141c25;
+    color: #fff;
+    border: none;
+}
+
+/* Casetă încărcare dark – contur și fundal închis */
+.dark .image-upload-box {
+    border-color: #141c25;
+}
+
+/* Hover dark – contur mai intens */
+.dark .image-upload-box:hover {
+    border-color: #111920;
+}
+
+/* Imagine previzualizare dark – fundal închis, contur */
+.dark .preview-wrapper img {
+    border-color: #111920;
+    transition: 0.2s;
+    background-color: #141c25;
+}
+
+/* Repetare casetă upload – cu padding și overflow */
+.image-upload-box {
+    margin-top: 10px;
+    width: 100%;
+    height: 160px;
+    border: 3px dashed rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+
+/* Hover pe box – evidențiază marginea */
+.image-upload-box:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Stack imagini – aliniere orizontală */
+.preview-stack {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+}
+
+/* Wrapper imagine – poziționare individuală */
+.preview-wrapper {
+    position: relative;
+    width: 32%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Wrapper imagine – padding și spacing */
+.preview-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+/* Interior wrapper – centrare și poziționare */
+.preview-wrapper > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Imagine previzualizare – stil clar, contur, responsive */
+.preview-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    padding: 4px;
+    background-color: white;
+}
+
+/* Buton ștergere imagine – roșu, colț sus dreapta */
+.remove-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* Hover imagine – efect zoom ușor */
+.preview-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    padding: 4px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.preview-wrapper img:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}

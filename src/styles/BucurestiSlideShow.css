@@ -1,0 +1,62 @@
+/* === SLIDESHOW LATERAL STÂNGA & DREAPTA === */
+.image-slideshow {
+    position: absolute;
+    top: 215px; /* sub navbar */
+    height: calc(120vh - 40px); /* lasă spațiu sus și jos */
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 50px;
+    pointer-events: none; /* nu blochează interacțiunile */
+  }
+  
+  .left-slideshow {
+    left: 45px;
+    width: 32vw;
+  }
+  
+  .right-slideshow {
+    right: 45px;
+    width: 32vw;
+  }
+  
+  .image-slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeSlide 18s infinite, drift 60s ease-in-out infinite;
+    filter: brightness(0.9) blur(1px);
+    transition: opacity 0.5s ease;
+  
+    /* fade spre margini */
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  
+    /* respectă colțurile */
+    border-radius: 50px;
+  }
+  
+  /* Fade logic între imagini */
+  @keyframes fadeSlide {
+    0%, 100% { opacity: 0; }
+    10%, 30% { opacity: 1; }
+    40%, 90% { opacity: 0; }
+  }
+  
+  /* Derulare subtilă pentru imagini */
+  @keyframes drift {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.05) translateY(-10px); }
+    100% { transform: scale(1) translateY(0); }
+  }
+  
+  /* RESPONSIVE – ascunde pe mobil */
+  @media (max-width: 768px) {
+    .image-slideshow {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+  
